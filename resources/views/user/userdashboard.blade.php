@@ -12,7 +12,7 @@
                     </div>            
                 </div>
                     <div class="d-flex justify-content-between align-items-end flex-wrap">                  
-                        <a class="btn btn-primary mt-2 mt-xl-0" href="{{url('#')}}">view cart</a>
+                        <a class="btn btn-primary mt-2 mt-xl-0" href="{{url('#')}}" title="Not Working">view cart</a>
                     </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
                               <td>{{$d->our_price}}</td>
                               <td>
                                 <div class="d-flex justify-content-between align-items-end flex-wrap">                  
-                        <a class="btn btn-primary mt-2 mt-xl-0" href="{{url('#')}}">Add to cart</a>
+                        <a class="btn btn-primary mt-2 mt-xl-0" href="{{url('#')}}" title="Not Working">Add to cart</a>
                     </div>
                               </td>
 
