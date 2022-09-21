@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 use Illuminate\Http\Request;
@@ -17,17 +19,27 @@ class ProductController extends Controller
     {
         // return $request;
 
+        $request->validate([
+            'name'=>['required', 'min:2'],
+            'image'=>['required'],
+            'original_price'=>['required'],
+            'our_price'=>['required'],
+        ]);
+        
+        if(isset($request)){
                 $data=new product();
-                $data->name=$request->name;
-                $data->original_price=$request->original_price;
-                $data->our_price=$request->our_price;
+                $data['name']=$request->name;
+                $data['original_price']=$request->original_price;
+                $data['our_price']=$request->our_price;
                 $file=$request->image;
                 $filename=time().'.'.$file->getClientOriginalExtension();
                  $request->image->move('assets',$filename);
-                 $data->image=$filename;
+                 $data['image']=$filename;
                 
                  $data->save();
+                 Alert::success('Congrats', 'Product Added successfully!!!');
                  return redirect()->back();
+        }
     }
 
     public function show(Request $req)

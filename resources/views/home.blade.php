@@ -34,21 +34,14 @@
 <body>
 
 <div class="container-scroller">
-
     @include('layouts.components.nav')
 
-    <div class="container-fluid page-body-wrapper">
-    
-
-    <div class="main-panel">
-        <div class="content-wrapper">
-
-        @yield('content')
-        </div>
-    </div>
-
-
-
+    <div class="container-fluid page-body-wrapper">  
+      <div class="main-panel">
+          <div class="content-wrapper">
+            @yield('content')
+          </div>
+      </div>
     </div>
 </div>
 

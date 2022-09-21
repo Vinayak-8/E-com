@@ -11,8 +11,7 @@
                     @if(session('message'))
                         <h2>{{ session('message')}}</h2>
                     @endif
-                  </div>                 
-
+                  </div>            
                   
                 </div>
                 <div class="d-flex justify-content-between align-items-end flex-wrap">                  
